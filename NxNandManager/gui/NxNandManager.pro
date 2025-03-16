@@ -121,10 +121,9 @@ HEADERS += \
     $$files(../lib/ZipLib/extlibs/lzma/*.h, false) \
     debug.h
 
-CONFIG(STATIC) {
-    SOURCES += $$files(../lib/ZipLib/extlibs/zlib/*.c, false)
-    HEADERS += $$files(../lib/ZipLib/extlibs/zlib/*.h)
-}
+
+
+
 CONFIG(DYNAMIC) {
     SOURCES += $$files(../lib/ZipLib/extlibs/zlib/*.c, false)
     HEADERS += $$files(../lib/ZipLib/extlibs/zlib/*.h)
@@ -159,14 +158,14 @@ RC_FILE = NxNandManager.rc
 CONFIG(ARCH32) {
     DEFINES += ARCH32
     #OPENSSL PATH
-    OPENSSL_LIB_PATH = $$PWD/../../../OpenSSL_mingw32
+    OPENSSL_LIB_PATH = $$PWD/../../../../../mingw32
     LIBS += -L$$PWD/../virtual_fs/dokan/x86/lib/ -ldokan1
 
 }
 CONFIG(ARCH64) {
     DEFINES += ARCH64
     #OPENSSL PATH
-    OPENSSL_LIB_PATH = $$PWD/../../../OpenSSL_mingw64
+    OPENSSL_LIB_PATH = $$PWD/../../../../../mingw64
     LIBS += -L$$PWD/../virtual_fs/dokan/x64/lib/ -ldokan1
 }
 
